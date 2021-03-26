@@ -269,6 +269,7 @@ body {
   background-color: #f7f7f7;
   border-radius: 5px;
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.4);
+  overflow-y: auto;
 }
 
 .account__detail:not(:last-of-type) {
