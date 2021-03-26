@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzas</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="./js/app.js"></script>
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <h1 class="align-center">Nueva Cuenta</h1>
+    <form action="" class="form">
+      <div class="form__add-account">
+        <label for="name" class="form__add-account__label">Nombre:</label>
+        <input type="text" class="form__add-account__input new-account__input__name">
+      </div>
+
+      <div class="form__add-account">
+        <label for="amount" class="form__add-account__label">Saldo inicial:</label>
+        <input type="text" class="form__add-account__input new-account__input__amount">
+      </div>
+
+      <div class="button__container">
+        <button class="new__account__button">Agregar</button>
+      </div>
+    </form>
+  </div>
+  <div class="overlay hidden"></div>
+
+  <div class="select__container">
+    <select class="select__accounts" name="accounts" id="accounts">
+      <option disabled selected value="Seleccione una cuenta">Seleccione una cuenta</option>
+    </select>
+
+    <button class="select__add-account">Agregar cuenta</button>
+  </div>
+
+  <div class="operations__container">
+
+    <div class="operations">
+      <button class="operations__button operations__income__button">
+        + Ingreso
+      </button>
+      <button class="operations__button operations__expense__button">- Gasto</button>
+      <button class="operations__button operations__transfer__button">Transferencia</button>
+
+
+      <form class="form__container form__income hidden" action="#">
+        <div class="form__group">
+          <input class="form__input form__input__income--detail" type="text" placeholder="Ingreso">
+        </div>
+
+        <div class="form__group">
+          <input class="form__input form__input__income--amount" type="number" placeholder="Importe">
+        </div>
+
+        <div class="button__container">
+          <button class="form__button form__button--income">Agregar</button>
+        </div>
+      </form>
+
+      <form class="form__container form__expense hidden" action="#">
+        <div class="form__group">
+          <input class="form__input form__input__expense--detail" type="text" placeholder="Gasto">
+        </div>
+
+        <div class="form__group">
+          <input class="form__input form__input__expense--amount" type="number" placeholder="Importe">
+        </div>
+
+        <div class="button__container">
+          <button class="form__button form__button--expense">Agregar</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- <div>
+    <form action="" class="form hidden">
+      <div class="form__newAccount">
+        <label for="accountName" class="form__newAccount__label">Nombre</label>
+        <input type="text" class="form__newAccount__input">
+      </div>
+      <div class="form__newAccount">
+        <label for="accountAmount" class="form__newAccount__label">Saldo inicial</label>
+        <input type="text" class="form__newAccount__input">
+      </div>
+      <button class="form__newAccount__button">Agregar</button>
+    </form>
+  </div> -->
+
+  <div class="main">
+
+    <div class="accounts">
+
+      <div class="accounts__header">
+        <div class="account__description">
+          <h1 class="account__name"></h1>
+          <h4 class="accounts__title">Movimientos</h4>
+        </div>
+        <span class="accounts__balance">$0</span>
+      </div>
+
+      <div class="movements">
+        <h3 class="account__movements__message">No hay movimientos</h3>
+        <!-- <div class="movements__box">
+          <p class="movements__description">Rentas auto</p>
+          <span class="movements__value">3730</span>
+        </div>
+        <div class="movements__box">
+          <p class="movements__description">Joda</p>
+          <span class="movements__value">1250</span>
+        </div>
+        <div class="movements__box">
+          <p class="movements__description">Cubiertas</p>
+          <span class="movements__value">22560</span>
+        </div> -->
+      </div>
+
+
+    </div>
+
+    <div class="balance">
+
+      <div class="account__detail">
+        <h1 class="account__detail__label">Gastos</h1>
+        <ul class="account__detail__container expense__detail">
+          <h3 class="account__detail__message">No se han registrados gastos</h3>
+          <!-- <li class="account__detail__li">
+            <p>Futbol</p>
+            <p>-150</p>
+          </li>
+          <li class="account__detail__li">
+            <p>Agua</p>
+            <p>-200</p>
+          </li>
+          <li class="account__detail__li">
+            <p>Nafta moto</p>
+            <p>-150</p>
+          </li> -->
+        </ul>
+      </div>
+
+      <div class="account__detail">
+        <h1 class="account__detail__label detail__income">Ingresos</h1>
+        <ul class="account__detail__container income__detail">
+          <h3 class="account__detail__message">No se han registrados ingresos</h3>
+        </ul>
+      </div>
+
+      <!-- <div class="accounts__description">
+        <h1>Cuentas</h1>
+      </div> -->
+
+    </div>
+
+    <!-- <div class="income">
+      <h2 class="income__title">Ingreso</h2>
+      <form class="form__income" action="#">
+        <div class="form__group">
+          <input class="form__input form__input__income--detail" type="text" placeholder="Ingreso">
+        </div>
+
+        <div class="form__group">
+          <input class="form__input form__input__income--amount" type="number" placeholder="Importe">
+        </div>
+
+        <div class="button__container">
+          <button class="form__button form__button--income">Agregar</button>
+        </div>
+      </form> -->
+    <!-- GASTOS -->
+
+
+    <!-- <div class="income__container hidden">
+
+        <div class="income">
+          <h2 class="income__title">Ingreso</h2>
+          <form class="form__income" action="#">
+            <div class="form__group">
+              <input class="form__input form__input__income--detail" type="text" placeholder="Ingreso">
+            </div>
+
+            <div class="form__group">
+              <input class="form__input form__input__income--amount" type="number" placeholder="Importe">
+            </div>
+
+            <div class="button__container">
+              <button class="form__button form__button--income">Agregar</button>
+            </div>
+          </form>
+        </div> -->
+
+
+
+    <!-- <div class="expense">
+        <h2 class="expense__title">Gasto</h2>
+        <form class="form__income" action="#">
+          <div class="form__group">
+            <input class="form__input form__input__expense--detail" type="text" placeholder="Gasto">
+          </div>
+
+          <div class="form__group">
+            <input class="form__input form__input__expense--amount" type="number" placeholder="Importe">
+          </div>
+
+          <div class="button__container">
+            <button class="form__button form__button--expense">Agregar</button>
+          </div>
+        </form>
+      </div> -->
+
+  </div>
+
+  </div>
+</body>
+
+</html>

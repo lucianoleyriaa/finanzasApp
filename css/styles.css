@@ -1,0 +1,388 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(94, 197, 118), rgb(155, 225, 93));
+  font-size: 62.5%;
+}
+
+.select__container {
+  width: 65%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select__accounts {
+  flex-basis: 70%;
+  padding: .5rem;
+  border: none;
+}
+
+.select__accounts:focus {
+  outline: none;
+}
+
+.select__add-account {
+  flex-basis: 25%;
+  border: none;
+  cursor: pointer;
+  font-size: .8rem;
+}
+
+.select__add-account:focus {
+  outline: none;
+}
+
+/* MODAL */
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.close-modal:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.form {
+  padding: 2rem;
+  margin: 1rem auto;
+}
+
+.form__add-account {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__add-account__label {
+  font-size: 1.2rem;
+  padding: .1rem .1rem;
+  flex-basis: auto;
+}
+
+.form__add-account__input {
+  font-size: 1rem;
+  flex-basis: 75%;
+  padding: .2rem;
+}
+
+.form__add-account__input:focus {
+  outline: none;
+}
+
+.new__account__button {
+  padding: .5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.operations__container {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.operations {
+  flex-basis: 90%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.operations__button {
+  padding: .5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.operations__button:focus {
+  outline: none;
+}
+
+.operations__income__button:hover {
+  background-color: rgb(155, 225, 93);
+  color: white;
+}
+
+.operations__expense__button:hover {
+  background-color: rgb(243, 75, 53);
+  color: white;
+}
+
+.operations__transfer__button:hover {
+  background-color: rgb(245, 215, 46);
+  color: white;
+}
+
+.form__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 25rem;
+  transition: all .3s, transform 1ms;
+}
+
+.hidden {
+  width: 0;
+  opacity: 0;
+  transform: translateX(-6rem);
+  visibility: hidden;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  height: 45rem;
+  margin: 1.5rem auto;
+  color: #444;
+}
+
+.accounts__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20%;
+}
+
+.account__description {
+  padding: 2rem;
+}
+
+.account__name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.accounts__title {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  color: rgb(128, 126, 126);
+}
+
+.accounts__balance {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 1rem
+}
+
+.accounts {
+  background-color: #f7f7f7;
+  flex-basis: 57.5%;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.movements {
+  max-height: 80%;
+  overflow: auto;
+}
+
+.movements__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.movements__description, .movements__value {
+  font-size: 1.2rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.movements__value--expense {
+  color: red;
+}
+
+.balance {
+  flex-basis: 40%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.account__detail {
+  flex-basis: 80%;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.4);
+}
+
+.account__detail:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.account__detail__label {
+  font-size: 1.2rem;
+  color: rgb(243, 75, 53);
+  padding: 1rem;
+  text-align: center;
+}
+
+.detail__income {
+  color: rgb(94, 197, 118);
+}
+
+.account__detail__message, .account__movements__message {
+  text-align: center;
+  color: rgb(128, 126, 126);
+  font-size: .8rem;
+}
+
+.account__detail__container {
+  list-style: none;
+  padding: 1rem;
+}
+
+.account__detail__li {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(128, 126, 126);
+  padding: .4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.incomes__detail {
+  flex-basis: 80%;
+  margin-bottom: 2rem;
+  background-color: #f7f7f7;
+}
+
+.accounts__description {
+  flex-basis: 80%;
+  background-color: #f7f7f7;
+}
+
+.income, .expense {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.income {
+  margin-bottom: 2rem;
+}
+
+.income__title, .expense__title {
+  text-align: center;
+  color: rgb(94, 197, 118);
+  padding: 1rem;
+}
+
+/* .form__income {
+  padding: 2rem;
+} */
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 1.5rem; */
+}
+
+.form__label {
+  font-size: 1.2rem;
+  /* margin-right: 0.8rem; */
+}
+
+.form__input {
+  padding: 0.5rem;
+  border: none;
+  width: 80%;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.button__container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form__button {
+  padding: .5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: rgb(94, 197, 118);
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+.form__button:hover {
+  cursor: pointer;
+}
+
+.form__button:focus {
+  outline: none;
+}
+
+.add__account {
+  margin: 1rem 10rem;
+}
