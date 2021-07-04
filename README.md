@@ -1,2 +1,2 @@
 # finanzasApp
- Aplicacion para administrar tus finanzas
+Aplicacion realizada en html css y vanilla javascript. 
